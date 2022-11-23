@@ -276,7 +276,8 @@ class Ui_Form(object):
         self.logListView.addItem(text)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", "Form", None))
+        Form.setWindowTitle(QCoreApplication.translate("Form", "Gender Recognition By Voice", None))
+        Form.setWindowIcon(QIcon("assets/icon/app-icon.ico"))
         self.groupBox.setTitle(QCoreApplication.translate("Form", "Actions", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("Form", "Record", None))
         self.startRecordBtn.setText(QCoreApplication.translate("Form", "Start", None))
