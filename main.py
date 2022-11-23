@@ -294,26 +294,28 @@ class Ui_Form(object):
         )
         self.saveBtn.setText(QCoreApplication.translate("Form", "Save", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("Form", "Result", None))
-        self.label_2.setText(QCoreApplication.translate("Form", "Man", None))
+        self.label_2.setText(QCoreApplication.translate("Form", "Male", None))
+        self.label_2.setStyleSheet("font-size: 20px;")
         self.manLabel.setText(
             QCoreApplication.translate(
                 "Form",
-                '<html><head/><body><p><span style=" font-size:18pt;">50</span></p></body></html>',
+                '<html><head/><body><p><span style=" font-size:18pt;">0</span></p></body></html>',
                 None,
             )
         )
-        self.label_3.setText(QCoreApplication.translate("Form", "Woman", None))
+        self.label_3.setText(QCoreApplication.translate("Form", "Female", None))
+        self.label_3.setStyleSheet("font-size: 20px;")
         self.womanLabel.setText(
             QCoreApplication.translate(
                 "Form",
-                '<html><head/><body><p><span style=" font-size:18pt;">50</span></p></body></html>',
+                '<html><head/><body><p><span style=" font-size:18pt;">0</span></p></body></html>',
                 None,
             )
         )
         self.label.setText(
             QCoreApplication.translate(
                 "Form",
-                '<html><head/><body><p><span style=" font-size:12pt; font-weight:600;">Gender Recognition Through Voice With Deep FNN</span></p></body></html>',
+                '<html><head/><body><p><span style=" font-size:12pt; font-weight:600;">Gender Recognition By Voice With Deep FNN</span></p></body></html>',
                 None,
             )
         )
@@ -408,8 +410,10 @@ class Ui_Form(object):
             + "; Female: "
             + str(self.female_pred * 100)
         )
-        self.manLabel.setText(str(self.male_pred * 100))
-        self.womanLabel.setText(str(self.female_pred * 100))
+        self.manLabel.setText(str("%.2f" % (self.male_pred * 100)))
+        self.manLabel.setStyleSheet("font-size: 50px;")
+        self.womanLabel.setText(str("%.2f" % (self.female_pred * 100)))
+        self.womanLabel.setStyleSheet("font-size: 50px;")
         self.runBtn.setEnabled(False)
         self.saveBtn.setEnabled(True)
         self.saveFileName.setEnabled(True)
